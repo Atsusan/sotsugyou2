@@ -1,0 +1,45 @@
+// 色
+$main-color: #1391e6; // メインカラー
+$accent-color: #ee5a6d; // アクセントカラー
+$sub-color1: #0060a0; // サブカラー１
+$sub-color2: #dff1fd; // サブカラー2
+$text-color: #393939; // テキストカラー
+
+// フォント
+$ff-icons: "Font Awesome 5 Free";
+$ff-base: "M PLUS Rounded 1c", "Meiryo", "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans", sans-serif; // 日本語標準
+$fz-base: 16px; // ベースフォントサイズ
+$fw-base: 500; // ベースフォントウェイト
+$lh-base: 1.6; // ベース行間
+
+// レイアウト
+$inner-width: 1000px; // インナー幅サイズ
+$sp-width: 768px; // スマホサイズ
+
+// ブレークポイント
+$breakpoints: (
+  // スマホ以下の場合
+  "sp": "screen and (max-width: #{$sp-width - 1px})",
+  // タブレット以下の場合
+  "tab": "screen and (max-width: #{$inner-width - 1px})",
+  // タブレット以上の場合
+  "pc": "screen and (min-width: #{$inner-width})"
+);
+
+// 重なり順の定義
+$layer: (
+  // ローディング
+  loading: 300,
+  // モーダル
+  modal: 100,
+  // ドロワー
+  drawer: 40,
+  // フローティング
+  floating: 30,
+  // ヘッダー
+  header: 20,
+  // フッター
+  footer: 10,
+  default: 1
+);

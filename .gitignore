@@ -1,0 +1,9 @@
+# モジュール群
+node_modules/
+
+# フォルダ
+public/
+
+# ファイル
+design
+package-lock.json
