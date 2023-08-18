@@ -1,0 +1,96 @@
+@use "../global" as global;
+
+.header {
+    height: 80px;
+    box-shadow: 0 0 3px 6px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    &__logo {
+        max-width: 270px;
+        width: 100%;
+    }
+
+    &__nav {
+        margin-left: auto;
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__item {
+            transition: color 0.3s;
+
+            & + & {
+                margin-left: 24px;
+            }
+
+            &:hover {
+                color: global.$main-color;
+            }
+
+            &__link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            &__icon {
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__ttl {
+                margin-top: 6px;
+                font-size: 11px;
+                font-weight: bold;
+                line-height: calc(18 / 11);
+            }
+        }
+    }
+
+    &__telArea {
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        &__text {
+            font-size: 12px;
+        }
+
+        &__tel {
+            font-size: 32px;
+            font-weight: bold;
+            color: global.$main-color;
+            position: relative;
+
+            &::before {
+                content: "";
+                background: url(../img/icon/icon_tel.svg) no-repeat center
+                    center/contain;
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.header-icon {
+    fill: global.$text-color;
+    transition: all 0.3s;
+}
+
+.header__nav__item:hover .header-icon {
+    fill: global.$main-color;
+}

@@ -1,0 +1,19 @@
+@use "../global" as global;
+
+.footer-menu {
+}
+
+.footer {
+    background-color: global.$main-color;
+    height: 55px;
+    display: grid;
+    place-content: center;
+
+    &__copy {
+        & > small {
+            font-size: 14px;
+            color: #fff;
+            line-height: calc(36 / 14);
+        }
+    }
+}

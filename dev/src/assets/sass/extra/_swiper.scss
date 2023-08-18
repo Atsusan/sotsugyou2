@@ -1,0 +1,69 @@
+@use "../global" as global;
+
+.swiper {
+    width: calc(100% - 34px * 2);
+    height: 100%;
+
+    &-wrapper {
+    }
+
+    &-slide {
+        text-align: center;
+        object-fit: contain;
+
+        & picture img {
+            width: calc(100% - 30px - 24px);
+            border-radius: 20px;
+        }
+    }
+
+    /* swiper pagination */
+    &-pagination {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        bottom: 60px !important;
+        left: 32px !important;
+    }
+
+    /* swiper button */
+    &-button-prev,
+    &-button-next {
+        position: relative;
+        &::after {
+            content: "" !important;
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &-button-prev {
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../img/icon/mv-arrow-left.svg) no-repeat center
+                center/contain;
+        }
+    }
+
+    &-button-next {
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: url(../img/icon/mv-arrow-right.svg) no-repeat center
+                center/contain;
+        }
+    }
+}
+/* swiperのバレッドの位置 */
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 35px) !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    right: var(--swiper-navigation-sides-offset, 28px) !important;
+}
