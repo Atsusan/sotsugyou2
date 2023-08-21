@@ -1,27 +1,56 @@
 @use "../global" as global;
 
 .guidTop {
+    margin-top: 140px;
+
     &__headBg {
+        position: relative;
+        width: 100%;
+        height: calc(202 / 1280 * 100vw);
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: inherit;
+            background: url(../img/front/bg-top.svg) no-repeat center
+                center/cover;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__contentBg {
+        background-color: global.$sub-color2;
+        padding-bottom: 82px;
     }
 
     &__content {
-        &__head {
+        &__list {
             display: flex;
             justify-content: center;
             gap: 80px;
+        }
 
-            &__left {
-                position: relative;
-                width: 50%;
-            }
+        &__item {
+            width: 50%;
 
-            &__right {
+            &__link {
                 position: relative;
-                width: 50%;
             }
 
             &__img {
-                & > img {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 20px;
                 }
             }
 
@@ -33,7 +62,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 width: 240px;
                 height: 131px;
             }
@@ -45,6 +74,7 @@
                 letter-spacing: 2.24px;
                 color: #fff;
                 position: relative;
+                margin-bottom: 42px;
 
                 &::before {
                     content: "";
@@ -52,7 +82,7 @@
                     height: 2px;
                     width: 40px;
                     background-color: #fff;
-                    bottom: 0;
+                    bottom: -20px;
                     left: 50%;
                     transform: translateX(-50%);
                 }
@@ -70,6 +100,9 @@
         &__text {
             font-size: 14px;
             line-height: calc(28 / 14);
+            margin-top: 60px;
+            background-color: #fff;
+            padding: 40px;
 
             &__span {
                 color: global.$accent-color;
@@ -78,5 +111,43 @@
     }
 
     &__footerBg {
+        position: relative;
+        width: 100%;
+        height: calc(97 / 1280 * 100vw);
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            background: url(../img/front/bg-bottom.svg) no-repeat top
+                center/cover;
+        }
+    }
+
+    &__footer__icon {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: calc(97 / 1280 * 100vw);
+            left: 40px;
+            width: 57px;
+            height: 57px;
+            background: url(../img/icon/deco-kirakira2-w.svg) no-repeat center
+                center/contain;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: calc(76 / 1280 * 100vw);
+            right: 20.45px;
+            width: 125.31px;
+            height: 138px;
+            background: url(../img/icon/deco-kirakira-w.svg) no-repeat center
+                center/contain;
+        }
     }
 }
