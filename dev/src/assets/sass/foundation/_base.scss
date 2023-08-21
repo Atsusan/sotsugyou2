@@ -1,18 +1,18 @@
 @use "../global" as global;
 
 body {
-  color: global.$text-color;
-  font-family: global.$ff-base, global.$ff-icons;
-  font-size: global.$fz-base;
-  font-weight: global.$fw-base;
-  line-height: global.$lh-base;
+    color: global.$text-color;
+    font-family: global.$ff-base, global.$ff-icons;
+    font-size: global.$fz-base;
+    font-weight: global.$fw-base;
+    line-height: global.$lh-base;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }

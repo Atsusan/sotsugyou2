@@ -1,0 +1,132 @@
+@use "../global" as global;
+
+// 色
+$drawer-btn-color: #1391e6; // ボタンの色
+$drawer-mask-color: #0060a0; // マスクの色
+$drawer-textColor: #fff;
+// 間隔
+$drawer-gap: 50px; //item間隔
+// font-size
+$drawer-textSize: 16px;
+
+#js-g-nav {
+    // 間隔・文字
+    & ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $drawer-gap;
+    }
+
+    & a {
+        color: $drawer-textColor;
+        font-size: $drawer-textSize;
+    }
+}
+
+/* ドロワー共通CSS */
+
+/* ボタンのためのCSS */
+.js-openbtn {
+    position: fixed;
+    top: 14px;
+    right: 17px;
+    z-index: 999;
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
+}
+
+/* Xに変化 */
+
+.js-openbtn span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    height: 1px;
+    border-radius: 1px;
+    background-color: $drawer-btn-color;
+    width: 45%;
+
+    &:nth-of-type(1) {
+        top: 15px;
+    }
+
+    &:nth-of-type(2) {
+        top: 23px;
+    }
+
+    &:nth-of-type(3) {
+        top: 31px;
+    }
+}
+
+.js-openbtn.active span {
+    &:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 30%;
+        background-color: #fff;
+        height: 2px;
+    }
+
+    &:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    &:nth-of-type(3) {
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 30%;
+        background-color: #fff;
+        height: 2px;
+    }
+}
+
+/* ナビゲーションのためのCSS */
+
+/* ナビゲーションの縦スクロール */
+#js-g-nav.panelactive #js-g-nav-list {
+    /* ナビの数が増えた場合の縦スクロール処理 */
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    height: 100vh; // 縦スクロール用とナビゲーションの横幅、縦幅は合わせる
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; //　ブラウザが対応してきたので不要かもしれない
+}
+
+/* ナビゲーション */
+#js-g-nav ul {
+    /* ナビゲーション天地中央揃え */
+    position: absolute;
+    z-index: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ここまで ドロワー共通CSS */
+
+#js-g-nav {
+    /* position: fixd;にし、z-indexの数値を大きくして前面へ */
+    position: fixed;
+    z-index: 900;
+    /* ナビのスタート位置と形状 */
+    top: 0;
+    right: -120%;
+    width: 100%;
+    height: 100vh; /* ナビの高さ */
+    background: $drawer-mask-color;
+    /* 動き */
+    transition: all 0.6s;
+}
+
+/* アクティブクラスがついたら位置を0に */
+#js-g-nav.panelactive {
+    right: 0;
+}

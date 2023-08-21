@@ -1,6 +1,14 @@
 @use "foundation";
 @use "component";
-@use "utility";
 @use "front__pages";
 @use "common";
+@use "utility";
 @use "extra";
+
+@use "./global" as global;
+
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px; /* 1000px以下、横幅のスペース確保 */
+}

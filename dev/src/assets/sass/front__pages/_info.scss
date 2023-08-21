@@ -4,21 +4,115 @@
 .info-flex {
     display: flex;
     align-items: center;
+    max-width: calc(1080px - 20px - 20px);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    gap: calc(60 / 16 * 1rem);
+}
+
+.info1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    &__head {
+        display: flex;
+        margin-left: 12px;
+    }
+
+    &__ttlArea {
+        display: flex;
+        align-items: baseline;
+        gap: 1em;
+    }
+
+    &__ttl {
+        font-size: 20px;
+        line-height: calc((36 / 20));
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+    &__sub__ttl {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: calc(36 / 12);
+        color: global.$main-color;
+    }
+
+    &__arch {
+        margin-left: auto;
+        color: #888;
+        font-size: 12px;
+        line-height: calc(36 / 12);
+        text-decoration: underline;
+    }
+
+    &__body {
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            &:first-child {
+                border-top: 1px solid #393939;
+            }
+
+            & + & {
+                border-top: 1px solid #393939;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid #393939;
+            }
+
+            &__link {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 8px;
+                    background: url(../img/icon/icon-arrow-black.svg) no-repeat
+                        center center/contain;
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+
+            &__date {
+                font-size: 12px;
+                color: #191919;
+                margin-left: 12px;
+            }
+
+            &__ttl {
+                margin-left: 24px;
+                font-size: 14px;
+                line-height: calc(36 / 14);
+            }
+        }
+    }
 }
 
 .info2 {
+    margin-top: -36px;
     width: 50%;
 
     &__img {
         position: relative;
-        width: 100%;
 
-        & > img {
+        & > img:nth-child(2) {
             position: absolute;
+            z-index: 10;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            left: 10px;
         }
     }
 }
