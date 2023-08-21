@@ -12,3 +12,38 @@
     margin: 0 auto;
     padding: 0 20px; /* 1000px以下、横幅のスペース確保 */
 }
+
+.sec__ttlArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.sec__ttl {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: calc(40 / 28);
+    letter-spacing: 2.24px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 67px;
+        height: 20px;
+        background: url(../img/front/title-deco.svg) no-repeat center
+            center/contain;
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        left: calc(-67px - 28px);
+    }
+
+    &::after {
+        right: calc(-67px - 28px);
+    }
+}
