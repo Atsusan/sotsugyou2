@@ -1,41 +1,37 @@
 @use "../global" as global;
 
 .c-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    &__link {
+        background-color: #fff;
+        color: global.$main-color;
+        border: 1px solid global.$main-color;
+        padding: 12px 46px;
+        border-radius: 30px;
+        position: relative;
+        transition: all 0.3s;
 
-  &__link {
-    background-color: #fff;
-    color: global.$main-color;
-    border: 1px solid global.$main-color;
-    padding: 12px 46px;
-    border-radius: 30px;
-    position: relative;
-    transition: all 0.3s;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: url(../img/icon/icon-arrow-right-blue.svg) no-repeat
+                center center/contain;
+            transition: all 0.3s;
+        }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background: url(../img/icon/icon-arrow-right-blue.svg) no-repeat center
-        center/contain;
-      transition: all 0.3s;
+        &:hover {
+            background-color: global.$main-color;
+            color: #fff;
+
+            &::after {
+                background: url(../img/icon/icon-arrow-right-white.svg)
+                    no-repeat center center/contain;
+                right: 10px;
+            }
+        }
     }
-
-    &:hover {
-      background-color: global.$main-color;
-      color: #fff;
-
-      &::after {
-        background: url(../img/icon/icon-arrow-right-white.svg) no-repeat center
-          center/contain;
-        right: 10px;
-      }
-    }
-  }
 }
