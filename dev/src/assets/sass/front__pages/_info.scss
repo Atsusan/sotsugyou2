@@ -72,6 +72,22 @@
                 display: flex;
                 align-items: center;
                 position: relative;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: global.$main-color;
+
+                    &::after {
+                        right: 0;
+                        background: url(../img/icon/icon-arrow-right-blue.svg)
+                            no-repeat center center/contain;
+                        transition: right 0.3s;
+                    }
+
+                    & .info1__body__item__date {
+                        color: global.$main-color;
+                    }
+                }
 
                 &::after {
                     content: "";
@@ -83,6 +99,7 @@
                         center center/contain;
                     width: 14px;
                     height: 14px;
+                    transition: right 0.3s;
                 }
             }
 
@@ -90,6 +107,7 @@
                 font-size: 12px;
                 color: #191919;
                 margin-left: 12px;
+                transition: color 0.3s;
             }
 
             &__ttl {
